@@ -6,6 +6,8 @@ import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
 import org.apache.spark.ml.feature.{CountVectorizer, StopWordsRemover, Tokenizer}
 import org.apache.spark.sql.functions.{col, udf}
 import org.apache.spark.sql.types._
+import java.io.PrintWriter
+
 object sparkproject {
 
   import org.apache.log4j.Level
@@ -13,7 +15,7 @@ object sparkproject {
 
 
   def main(args: Array[String]): Unit = {
-    val modelPath = "/Users/marcu/Documents/trabalhoMBA/englishPCFG.ser.gz"
+    //val modelPath = "/Users/marcu/Documents/trabalhoMBA/englishPCFG.ser.gz"
 
     val spark = SparkSession
       .builder()
@@ -84,18 +86,17 @@ object sparkproject {
     println("Accuracy: " + accuracy)
 
     // Salvando o modelo treinado
-    model.write.overwrite().save("C:/Users/marcu/trabalhoMba/data/modelo")
+    model.write.overwrite().save("models")
 
     // Carregando o modelo treinado
-    val loadedModel = PipelineModel.load("C:/Users/marcu/trabalhoMba/data/modelo")
+    val loadedModel = PipelineModel.load("models")
 
     // Realizando predições com o modelo carregado
     val newPredictions = loadedModel.transform(testData)
 
-    // Visualizar resultados
-    predictionsWithSentiment.select("SentimentText", "sentiment").show(false)
+    // Gerar gráfico pizza
+    val htmlGenerator = new HTMLGenerator()
+    htmlGenerator.generatePieChart(percentages)
 
-    // Visualizar porcentagens
-    percentages.show()
   }
 }
