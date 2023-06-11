@@ -14,7 +14,6 @@ object sparkproject {
 
 
   def main(args: Array[String]): Unit = {
-    //val modelPath = "/Users/marcu/Documents/trabalhoMBA/englishPCFG.ser.gz"
 
     val spark = SparkSession
       .builder()
