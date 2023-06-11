@@ -6,7 +6,6 @@ import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
 import org.apache.spark.ml.feature.{CountVectorizer, StopWordsRemover, Tokenizer}
 import org.apache.spark.sql.functions.{col, udf}
 import org.apache.spark.sql.types._
-import java.io.PrintWriter
 
 object sparkproject {
 
