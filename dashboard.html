@@ -1,0 +1,30 @@
+
+      <html>
+        <head>
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        </head>
+        <body>
+          <canvas id="pieChart"></canvas>
+          <script>
+            const data = {
+              labels: ['negativo', 'positivo'],
+              datasets: [{
+                data: [162957, 152924],
+                backgroundColor: ['#ff6384', '#36a2eb', '#ffce56'], // Cores das fatias do gráfico
+                hoverBackgroundColor: ['#ff6384', '#36a2eb', '#ffce56'] // Cores ao passar o mouse sobre as fatias
+              }]
+            };
+
+            const options = {
+              responsive: false
+            };
+
+            const pieChart = new Chart(document.getElementById('pieChart'), {
+              type: 'pie',
+              data: data,
+              options: options
+            });
+          </script>
+        </body>
+      </html>
+    
