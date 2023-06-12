@@ -32,3 +32,7 @@ Carrega o modelo salvo.
 11. Gera um gráfico de pizza para visualizar a distribuição dos sentimentos.
 Resultados
 12. A precisão do modelo de análise de sentimentos é exibida no console. Além disso, um gráfico de pizza é gerado para visualizar a distribuição dos sentimentos.
+
+
+![Alt Text](img/gifGraficoPizza.gif)
+

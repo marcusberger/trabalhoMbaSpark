@@ -92,6 +92,8 @@ object sparkproject {
     // Realizando predições com o modelo carregado
     val newPredictions = loadedModel.transform(testData)
 
+    percentages.show(false)
+
     // Gerar gráfico pizza
     val htmlGenerator = new HTMLGenerator()
     htmlGenerator.generatePieChart(percentages)

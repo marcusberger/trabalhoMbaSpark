@@ -6,22 +6,19 @@
         <body>
           <canvas id="pieChart"></canvas>
           <script>
-            // Dados para o gráfico de pizza
             const data = {
               labels: ['negativo', 'positivo'],
               datasets: [{
-                data: [162535, 153423],
+                data: [162957, 152924],
                 backgroundColor: ['#ff6384', '#36a2eb', '#ffce56'], // Cores das fatias do gráfico
                 hoverBackgroundColor: ['#ff6384', '#36a2eb', '#ffce56'] // Cores ao passar o mouse sobre as fatias
               }]
             };
 
-            // Configurações do gráfico de pizza
             const options = {
               responsive: false
             };
 
-            // Criar o gráfico de pizza
             const pieChart = new Chart(document.getElementById('pieChart'), {
               type: 'pie',
               data: data,
